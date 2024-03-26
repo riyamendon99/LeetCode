@@ -1,5 +1,7 @@
 class Solution:
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
+        
+        #Follow this template ONLY
         left = 0
         right = 0
         result = 0
