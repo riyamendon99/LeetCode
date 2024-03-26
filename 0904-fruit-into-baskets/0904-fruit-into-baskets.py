@@ -1,6 +1,6 @@
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
-        
+        #Watched Video
         #Not all test cases passed. getting confused. Not able to implement how to decrement left when condition is not met.
         
         #Basic Rule: Increment right. If condition is not met then decrement left and perform decrement calculation until the condition is met. Then increment right.
