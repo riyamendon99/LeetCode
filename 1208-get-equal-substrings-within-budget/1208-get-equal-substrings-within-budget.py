@@ -5,7 +5,8 @@ class Solution:
         left = 0
         right = 0
         result = 0
-        count = 0
+        #count = 0 No need for this since we have used right-left + 1 
+        #In cases where left and right are not actually the calculation, we use this count variable
         cost = 0
         while(right<len(s)):
             if s[right] != t[right]:
