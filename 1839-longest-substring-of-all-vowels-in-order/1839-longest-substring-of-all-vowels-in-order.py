@@ -3,6 +3,7 @@ class Solution:
         left = 0
         right = 1
         vowels = 'aeiou'
+        #Whenever we want to maintain an order, use this
         order = {char:idx for idx, char in enumerate(vowels)}
         count = 0
         while(right<len(word)):
