@@ -18,9 +18,9 @@ class SmallestInfiniteSet:
 
     def addBack(self, num: int) -> None:
         if num not in self.arr:
+            heapq.heappush(self.arr, num)
             """No need to do the below it automatically updates the list"""
             #self.arr.append(num)
-            heapq.heappush(self.arr, num)
             
         
 
