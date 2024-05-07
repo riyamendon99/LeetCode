@@ -2,6 +2,19 @@ class Solution:
     def minStoneSum(self, piles: List[int], k: int) -> int:
         """Learn basic heap functionalities- How to form a max heap, heappush, heappop, ceil"""
         
+        """Below is 2 liner code. learn from this and use this in next questions---->
+
+class Solution:
+    def minStoneSum(self, piles: List[int], k: int) -> int:
+        piles_neg = [-a for a in piles]
+        heapq.heapify(piles_neg)
+
+        for _ in range(k):
+            cur = heapq.heappop(piles_neg) // 2
+            heapq.heappush(piles_neg, cur)
+        
+        return -sum(piles_neg)"""
+        
         heap = []
         heapq.heapify(heap)
         result = 0
