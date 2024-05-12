@@ -1,4 +1,4 @@
-class HeapItem:
+class ModifiedHeap:
     def __init__(self, word: str, count: int) ->None:
         self.word = word
         self.count = count
@@ -7,11 +7,6 @@ class HeapItem:
             return self.word>to_compare.word
         return self.count < to_compare.count
 
-
-
-
-
-
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         #We need to create a custom heap
@@ -19,7 +14,7 @@ class Solution:
         word_counts = collections.Counter(words)
         heap = []
         for word, count in word_counts.items():
-            item = HeapItem(word, count)
+            item = ModifiedHeap(word, count)
             if len(heap) < k:
                 heappush(heap, item)
             else:
