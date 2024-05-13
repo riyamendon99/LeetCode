@@ -1,6 +1,7 @@
 class Solution:
     def maximumImportance(self, n: int, roads: List[List[int]]) -> int:
         #With Heap
+        #Saw video. It was very simple. I could have done it. Just Greedy dekh ke dar gayi. I knew ki number of outgoing edge se we can assign the values accordingly but I did calculation mistake and didnt see ki node 2 se 4 edge jari hai. I calculated it as 2. So got confused. Complex graph mei dimag kam nai karta. Chi. Mai kar sakti thi yeh.
         total = 0
         heap = []
         edgeCount = [0]*n
@@ -10,7 +11,7 @@ class Solution:
         
         for index, value in enumerate(edgeCount):
             heappush(heap,(-value, index))
-        print(heap)  
+        #print(heap)  
         while n:
             v,i = heappop(heap)
             total += (-v)*n
