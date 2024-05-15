@@ -35,7 +35,7 @@ class Solution:
         return time
             
             
-        
+        #My previous code. Was not able to buid the logic.
         """heap = []
         cannotAdd = {}
         result = []
