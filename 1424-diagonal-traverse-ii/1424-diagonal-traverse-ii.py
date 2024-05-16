@@ -1,6 +1,6 @@
 class Solution:
     def findDiagonalOrder(self, nums: List[List[int]]) -> List[int]:
-        hashMap = {}
+        """hashMap = {}
         for i in range(len(nums)):
             for j in range(len(nums[i])):
                 total = i+j
@@ -16,13 +16,13 @@ class Solution:
             stack1 = hashMap[k]
             while stack1:
                 result.append(stack1.pop())
-        return result
+        return result"""
                     
                 
+             
                 
                 
-                
-                
+        #Previous heap solution which I could not implement  so used hashMap      
         """heap = []
         for i in range(len(nums)):
             for j in range(len(nums[i])):
@@ -37,4 +37,15 @@ class Solution:
                 q.append(ele)
             result.append(ele)
         return result"""
+        
+        #Looking in Discussions section, HEAP SOLUTION
+        heap = []
+        for i in range(len(nums)):
+            for j in range(len(nums[i])):
+                heappush(heap, (i+j,j,i)) #YES, YOU CAN ADD 3 ELEMENTS TOO
+        result = []
+        while heap:
+            total, y, x = heappop(heap)
+            result.append(nums[x][y])
+        return result
         
