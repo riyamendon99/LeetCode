@@ -1,6 +1,6 @@
 class Solution:
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
-        for t in trips:
+        """for t in trips:
             if capacity<t[0]:
                 return False
         heap = []
@@ -20,7 +20,22 @@ class Solution:
                 if capacity<total:
                     return False 
             km += 1
+        return True"""
+        
+        #My solution is correct. The below is less memory approach
+        arr = []
+        for numPass, start, end in trips:
+            arr.append((start,numPass))
+            arr.append((end,-numPass))
+            
+        arr.sort()
+        total = 0
+        for a in arr:
+            total = total + a[1]
+            if total>capacity:
+                return False
         return True
+            
             
             
             
