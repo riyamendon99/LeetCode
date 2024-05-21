@@ -1,5 +1,8 @@
 class LUPrefix:
     """Watched Video"""
+    """Logic: An aray full of False values with length n
+    and keep one variable maxVal that stores the longest valid prefix
+    Only increment it if the values are continuously True"""
     def __init__(self, n: int):
         self.arr = [False]*(n+1)
         self.maxVal = 0
