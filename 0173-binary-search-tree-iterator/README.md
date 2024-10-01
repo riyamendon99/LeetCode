@@ -48,3 +48,10 @@ bSTIterator.hasNext(); // return False
 	<li>Could you implement <code>next()</code> and <code>hasNext()</code> to run in average <code>O(1)</code> time and use&nbsp;<code>O(h)</code> memory, where <code>h</code> is the height of the tree?</li>
 </ul>
 </div>
+
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/da912e33-bad1-4883-98bb-52cb12cb0bf0)
