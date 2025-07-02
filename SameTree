@@ -1,0 +1,58 @@
+100. Same Tree
+https://leetcode.com/problems/same-tree/description/
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        """Case 1: when both are null return True
+        Case 2: When one is null and one has val return False
+        Case 3: When both have value but are not equal return False
+        Case 4: When both have value and values are equal do recursion but check if both the subtrees match and that would be final answer
+        Space Complexity: Worst Case we need to traverse both the trees fully
+        so O(len(p) + len(q))
+
+        ChatGPT:
+        The space complexity here is determined by the call stack created due to recursion. There is no extra data structure used—just recursive function calls. So, space complexity = maximum depth of the recursion.
+        
+        Time complexity:
+        In a balanced binary tree, the height is log(n) where n is the number of nodes. So time complexity is O(log(n))
+        In a skewed (degenerate) tree like a linked list (where each node has only one child): The height of the tree becomes n, i.e., the number of nodes.
+The recursion depth becomes n, since it goes down one side of the tree only.
+So, space used on the call stack = O(n)."""
+
+        if not p and not q:
+            return True
+        if not p or not q:
+            return False
+        if p.val != q.val:
+            return False
+        return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
+
+
+
+        """Did not consider edge case where one can be null and one can have val
+        In tree problems - First find the base case(s)
+        first write the cases where it will fail
+        then the recursion statements when actually we need to recursively check
+        also we need to check BOTH left AND right tree to have a final return value
+        If a node is null - use the not keyword like this: if not p VVVIMP"""
+        """if(p and q):
+            if(p.val != q.val):
+                print('p.val ', p.val)
+                print('q.val ', q.val)
+                result = False
+            else:
+                self.isSameTree(p.left, q.left)
+                self.isSameTree(p.right, q.right)
+        else:
+            return True"""
+
+    
+
+        
